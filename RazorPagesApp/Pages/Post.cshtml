@@ -1,0 +1,119 @@
+﻿@page
+
+<h2>@Message</h2>
+<form method="post">
+    <p>
+        <label>Имя:</label><br />
+        <input type="text" name="name" />
+    </p>
+    <p>
+        <label>Возраст:</label><br />
+        <input type="number" name="age" />
+    </p>
+    <input type="submit" value="Отправить" />
+</form>
+
+@functions {
+    string Message { get; set; } = "";
+    public void OnPost()
+    {
+        string name = Request.Form["name"];
+        string age = Request.Form["age"];
+        Message = $"Ваше имя: {name}. Ваш возраст: {age}";
+    }
+}
+
+
+
+
+
+@* <h2>Ввeдите столицы стран</h2>
+<form method="post">
+    <p>
+        Германия: <input type="text" name="items[germany]" />
+    </p>
+    <p>
+        Франция: <input type="text" name="items[france]" />
+    </p>
+    <p>
+        Испания: <input type="text" name="items[spain]" />
+    </p>
+    <input type="submit" value="Отправить" />
+</form>
+<h3>Страны и их столицы</h3>
+<ul>
+    @foreach(var country in Countries)
+    {
+        <li>@country.Key - @country.Value</li>
+    }
+</ul>
+
+@functions{
+    Dictionary<string, string> Countries { get; set; } = new();
+    public void OnPost(Dictionary<string, string> items)
+    {
+        Countries = items;
+    }
+}
+
+
+
+
+
+
+
+
+
+ *@
+@* <h2>Introduceti numele angajatilor</h2>
+
+<form method="post">
+    <p><input name="oameni[0]"/></p>
+    <p><input name="oameni[1]"/></p>
+    <p><input name="oameni[2]" /></p>
+    <input type="submit" value="Trimite"/>
+</form>
+
+<h3>Lista angajatilor:</h3>
+<ol>
+    @foreach(var om in Model.People)
+    {
+        <li>@om</li>
+    }
+</ol>
+ *@
+
+
+@* <h1>@Model.Message</h1>
+
+
+<form method="post">
+
+    <p>
+        <label>Numele:</label><br />
+        <input type="text" name="name" />
+    </p>
+    <p>
+        <label>Virsta:</label><br />
+        <input type="number" name="age" />
+    </p>
+    <input type="submit" value="Trimite" />
+</form>
+ *@
+
+
+
+@* <form method="post">
+   <input type="text" name="username" />
+    <input type="submit" value="Trimite" />
+</form>
+ *@
+
+
+@* @functions {
+
+    public string Message { get; private set; } = "";
+    public void OnGet() => Message = "Introduceti numele dvs";
+
+    public void OnPost(string username) => Message = $"Numele dvs. este: {username}";
+} *@

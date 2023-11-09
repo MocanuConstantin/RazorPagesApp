@@ -1,0 +1,18 @@
+﻿@page "{handler?}"
+
+@using RazorPagesApp.Pages
+
+@model HandlersModel
+
+<h2>Lista fotbalistilor</h2>
+
+<table>
+    <tr><th>Nume</th><th>Age</th></tr>
+    @foreach(Persoana om in Model.PersoaneAfisate)
+    {
+        <tr>
+            <td>@om.Name</td>
+            <td>@om.Age</td>
+        </tr>
+    }
+</table>

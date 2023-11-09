@@ -1,0 +1,26 @@
+﻿@page
+
+@model BindPropRazor.Pages.IndexModel
+
+<h2>Name: @Model.FirstName</h2>
+
+<h2>Introduceti datele</h2>
+
+<form method="post">
+    <p>
+        <label>Numele:</label><br />
+        <input type="text" name="name" />
+    </p>
+    <p>
+        <br />
+        <input type="number" name="age" /><br />
+    </p>
+    <input type="submit" value="Trimite" />
+</form>
+
+@if (Request.Method == "POST")
+{
+    <h3>Datele primite:</h3>
+    <p>Numele: @Model.Maib?.Name</p>
+    <p>Virsta: @Model.Maib?.Age</p>
+}
